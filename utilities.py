@@ -7,8 +7,9 @@ def clear_screen(sleeptime):
     else:
         time.sleep(sleeptime)
         _ = system('clear')
-def write_per_character(text: str, sleeptime: float):
+def write_per_character(text: str, delay: float, sleeptime: float):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(sleeptime)
+        time.sleep(delay)
+    time.sleep(sleeptime)
