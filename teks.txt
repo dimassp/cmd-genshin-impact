@@ -1,0 +1,24 @@
+String[] five = {"Diluc", "Jean", "Keqing", "Klee", "Mona", "Qiqi", "Amos\' Bow", "Lost Prayer to the Sacred Winds",
+                        "Wolf\'s Gravestone", "Skyward Blade", "Skyward Harp", "Skyward Atlas", "Skyward Spine", "Skyward Pride", 
+                        "Aquila Favonia"};
+    int random_index = new Random().nextInt(five.length);
+    String random_five = five[random_index];
+    System.out.println("CONGRATULATIONS! YOU GOT A 5 STAR **"+random_five+"**.");
+    this.characters.add(random_five);
+}
+if (chance >= 51 && chance <= 510) {
+    String[] four = {"Amber", "Lisa", "Kaeya", "Barbara", "Razor", "Bennett", "Noellee", "Fischl",
+                        "Sucrose", "Beidou", "Ningguang", "Xiangling", "Xingqiu", "Chongyun", "Diona", "Xinyan"};
+    int random_index = new Random().nextInt(four.length);
+    String random_four = four[random_index];
+    System.out.println("Nice! You got a 4 star *"+random_four+"*.");
+    this.characters.add(random_four);
+}
+else {
+    String[] three = {"Sling Shot", "Raven Bow", "Thrillingg Tales of Dragon Slayers", "Black Tassel", 
+                        "Bloodtainted Greatsword", "Skyrider Sword", "Cool Steel", "Sharpshooter\'s Oath",
+                        "Emerald orb", "Magic Guide", "Debate Club", "Ferrous Shadow", "Harbinger of Dawn"};
+    int random_index = new Random().nextInt(three.length);
+    String random_three = three[random_index];
+    System.out.println("Oof... You got a 3 star"+ random_three+". Better Luck next time!");
+    this.characters.add(random_three);

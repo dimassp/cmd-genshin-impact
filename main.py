@@ -1,9 +1,18 @@
-from character.hero.hero import Hero
+import time
+from character.hero.hero import Hero, starter_hero_list, basic_hero_list, hero_list
 from menu.menu import Menu
 from character.utilities import generate_character
+from maps.utilities import generate_maps
+def generate_objects():
+    generate_character()
+    generate_maps()
+    # print(f"starter hero total: {len(starter_hero_list)}")
+    # print(f"basic hero total: {len(basic_hero_list)}")
+    # print(f"total hero: {len(basic_hero_list)}")
+    # time.sleep(3)
 
 if __name__ == "__main__":
-    generate_character()
+    generate_objects()
     menu = Menu()
     while menu.is_loopable:
         menu.main()

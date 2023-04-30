@@ -26,32 +26,32 @@ def iterate_text(text_type: str, player: Player, start: int, end: int):
 def get_text(text: str, player: Player):
     story_texts = {
         "intro_text" : [
-            {
+            { #0
                 "text": f"Welcome, {player.get_username()}!\n",
                 "delay": 0.05,
                 "sleeptime": 2,
                 "clear_screen": False
             },
-            {
+            { #1
                 "text": "This is your first time exploring the world of fantasy. Right?",
                 "delay": 0.05,
                 "sleeptime": 1.5,
                 "clear_screen": False
             },
-            {
+            { #2
                 "text": " There are so many interesting things you can do here!!!",
                 "delay": 0.05,
-                "sleeptime": 2,
+                "sleeptime": 1,
                 "clear_screen": False
             },
-            {
-                "text": """\n\nDo you want to have some tutorials?""" + r""" [Y\N]""",
-                "delay": 0.05,
+            { #3
+                "text": """\n\n""",
+                "delay": 0,
                 "sleeptime": 0,
                 "clear_screen": False
             },
         ],
-        "tutorial_text": [
+        "tutorial_intro": [
             { #0
                 "text": f"Great!!!",
                 "delay": 0.05,
@@ -101,13 +101,7 @@ def get_text(text: str, player: Player):
                 "clear_screen": False
             },
             { #8
-                "text": rf""" you can either pick one of them to find out their own  informations of the hero you choose or you can skip this step.""",
-                "delay": 0.05,
-                "sleeptime": 1.5,
-                "clear_screen": False
-            },
-            { #9
-                "text": f"""\nDo you want to proceed this step? [Y//N]: """,
+                "text": rf""" you can either pick one of them to find out their own informations of the hero you choose or you can skip this step.""",
                 "delay": 0.05,
                 "sleeptime": 1.5,
                 "clear_screen": False
@@ -119,6 +113,20 @@ def get_text(text: str, player: Player):
             #     "clear_screen": False
             # },
         ],
+        "get_hero_information_text": [
+            { #0
+                "text": f"Well...",
+                "delay": 0.05,
+                "sleeptime": 1.5,
+                "clear_screen": True
+            },
+            { #1
+                "text": f"Here are the heroes you currently owned...",
+                "delay": 0.05,
+                "sleeptime": 2,
+                "clear_screen": False
+            },
+        ],
         "continue_text": [
             {
                 "text": f"Welcome back to the world of fantasy, {player.get_username()}!",
@@ -126,6 +134,14 @@ def get_text(text: str, player: Player):
                 "sleeptime": 2,
                 "clear_screen": False
             }
-        ]
+        ],
+        "end_of_tutorial": [
+            {
+                "text": f"And that's all the tutorial...",
+                "delay": 0.05,
+                "sleeptime": 2,
+                "clear_screen": False
+            }
+        ],
     }
     return story_texts[text]

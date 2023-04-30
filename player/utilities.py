@@ -1,7 +1,7 @@
 import sys, time
 from .player import Player, player_list
 from utilities import clear_screen
-from character.hero.hero import basic_hero_list
+from character.hero.hero import starter_hero_list
 # sys.path.append(r'D:\PROGRAMMING\python\bani\Genshin-Impact-OOP-master\New Genshin Impact')
 
 def create_new_player():
@@ -14,7 +14,7 @@ def create_new_player():
         print(f"Player with username {username} already exist at index {index}. Try another username.")
         clear_screen(1)
         return
-    for hero in basic_hero_list:
+    for hero in starter_hero_list:
         new_player.add_hero_collection(hero)
     player_list.append(new_player)
     # print(f"list of player: {player_list}")

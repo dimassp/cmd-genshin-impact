@@ -47,7 +47,7 @@ class Character():
         return self.__level
     
     def set_level(self, value: int):
-        self.__level = value
+        self.__level = self.__level + value
         
     def get_exp(self):
         return self.__exp
