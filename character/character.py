@@ -1,13 +1,14 @@
 class Character():
-    def __init__(self, name: str = "", role: str = "", hp: int = 0, 
-                 armor: int = 0, basic_attack_damage: int =0, level: int =1, exp: int=0):
+    def __init__(self, name: str = "", role: str = "", type: str ="",
+                 current_hp: int = 0, max_hp: int =0, armor: int = 0, 
+                 basic_attack_damage: int =0):
         self.__name = name
         self.__role = role
-        self.__hp = hp
+        self.__type = type
+        self.__max_hp = max_hp
+        self.__current_hp = current_hp
         self.__armor = armor
-        self.__basic_attack_damage = basic_attack_damage
-        self.__level = 1
-        self.__exp = exp
+        self.__basic_attack_damage = basic_attack_damage        
     
     def get_name(self):
         return self.__name
@@ -24,13 +25,22 @@ class Character():
             2 : "Hero"
         }
         self.__role = role[value]
-
-    def get_hp(self):
-        return self.__hp
     
-    def set_hp(self, value):
-        self.__hp = value
-
+    def get_type(self):
+        return self.__type
+    
+    def get_current_hp(self):
+        return self.__current_hp
+    
+    def set_current_hp(self, value):
+        if self.__current_hp + value >= self.get_max_hp():
+            self.__current_hp = self.get_max_hp()
+        else:
+            self.__current_hp = self.__current_hp + value
+    
+    def get_max_hp(self):
+        return self.__max_hp
+    
     def get_armor(self):
         return self.__armor
     
@@ -43,14 +53,4 @@ class Character():
     def set_basic_attack_damage(self, value: int):
         self.__basic_attack_damage = value
         
-    def get_level(self):
-        return self.__level
     
-    def set_level(self, value: int):
-        self.__level = self.__level + value
-        
-    def get_exp(self):
-        return self.__exp
-    
-    def set_exp(self, value: int):
-        self.__exp = value
